@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="rangeslider">
+        <p>GOAL FOR YOUR CAMPAIGN</p>
+        <input type="range" min="0" max="10000" value="10" class="myslider" id="sliderRange">
+        <input type="hidden" id="amount" name="amount" value="">
+        <p class="limit1"></p>
+        <p class="limit2">10000$</p>
+    </div>
+</body>
+<script>
+    var rangeslider = document.getElementById("sliderRange");
+    var amount = document.getElementById("amount");
+    var output = document.querySelector(".limit1");
+    output.innerHTML = `${rangeslider.value}$`;
+    rangeslider.oninput = function() {
+    output.innerHTML = `${rangeslider.value}$`;
+    amount.value = `${rangeslider.value}$`;
+
+}
+</script>
+</html>
